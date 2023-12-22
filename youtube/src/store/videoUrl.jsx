@@ -10,3 +10,5 @@ const videoUrl=createSlice({
             state.value=`${state.value}${action.payload}`
     }
 }})
+export const {setVideoUrl} =videoUrl.actions;
+export default videoUrl.reducer
