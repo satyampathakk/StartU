@@ -1,4 +1,4 @@
-
+import { setPk } from "../store/pkSlice";
 const Card = ({description,title,image,pk}) => {
     return (
         <div key={pk} className="card" onClick={(pk)=>{setPk(pk)}}>
@@ -12,3 +12,4 @@ const Card = ({description,title,image,pk}) => {
         </div>
     );
 }
+export default Card;
