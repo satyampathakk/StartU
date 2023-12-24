@@ -21,7 +21,7 @@ const Player = ({ videoId }) => {
   }, [videoId]);
 
   if (!videoData) {
-    return <div>Loading...</div>;
+    return <h1>Loading...</h1>;
   }
 
   const videoUrl = `/api/video/${videoId}/play/`;
