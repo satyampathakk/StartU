@@ -1,4 +1,4 @@
-const InboxUser =({username,message})=>{
+const InboxUser =({ username = "Default User", message = "No message available" })=>{
 return (
     <div>
     <div>
