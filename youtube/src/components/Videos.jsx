@@ -1,4 +1,3 @@
-import React from 'react'
 import VideoCard from './VideoCard'
 
 function Videos({ videos }) {
