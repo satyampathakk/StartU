@@ -14,7 +14,8 @@ const Home=()=>{
 
 return(
     <div>
-    {data?data.map((item)=>{<Card key={item.pk}{...item}></Card>}):<h1>Loading...</h1>}
+    {data?data.map((item)=>{<Card key={item.pk}{...item}></Card>}):<h1 >Loading...</h1>}
+    <h1 >Hello guys it is me satyam</h1>
     </div>
 )
 }

@@ -4,9 +4,8 @@ import Navbar from './components/Navbar';
 import Home from './components/layouts/Home';
 import InboxUser from './components/InboxUser'
 import UserProfile from './components/UserProfile'
-import './app.css';
 import Videos from './components/Videos';
-
+import './App.css'
 const App = () => {
   return (
     <Router>
