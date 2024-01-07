@@ -2,7 +2,7 @@
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
-from rest_framework.decorators import permission_classes,authentication_classes,api_view
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import *
 from django.contrib.auth.models import User
@@ -33,11 +33,6 @@ class Api(APIView):
             user = User.objects.create_user(username=username, password=password)
             token, created = Token.objects.get_or_create(user=user)
             return Response({'token': token.key}, status=status.HTTP_201_CREATED)
-    def post(self,request,*args, **kwargs):
-        serializer = VideoSerializer(data=request.data, context={'request': request})
-        if serializer.is_valid():
-            serializer.save()
-        return Response(serializer.data)
 @api_view(['GET'])
 def stream_video(request, video):
     videop=Video.objects.get(pk=video)
@@ -46,11 +41,10 @@ def stream_video(request, video):
     response['Content-Disposition'] = f'inline; filename="{videop.file.name}"'
     return response
 
-#i have to review upper code 
+#i have to review lower code 
 
 class UserProfileListView(APIView):
-    permission_classes = [IsAuthenticated]
-
+    authentication_classes=[TokenAuthentication]
     def get(self, request):
         profiles = UserProfile.objects.all()
         serializer = UserProfileSerializer(profiles, many=True)
@@ -64,8 +58,6 @@ class UserProfileListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class UserProfileDetailView(APIView):
-    permission_classes = [IsAuthenticated]
-
     def get(self, request, pk):
         profile = get_object_or_404(UserProfile, pk=pk)
         serializer = UserProfileSerializer(profile)
@@ -85,7 +77,6 @@ class UserProfileDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class VideoListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         videos = Video.objects.all()
@@ -100,7 +91,6 @@ class VideoListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class VideoDetailView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         video = get_object_or_404(Video, pk=pk)
@@ -121,7 +111,6 @@ class VideoDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class LikeListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         likes = Like.objects.all()
@@ -136,7 +125,6 @@ class LikeListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LikeDetailView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         like = get_object_or_404(Like, pk=pk)
@@ -157,7 +145,6 @@ class LikeDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CommentListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         comments = Comment.objects.all()
@@ -172,7 +159,6 @@ class CommentListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CommentDetailView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         comment = get_object_or_404(Comment, pk=pk)
@@ -193,7 +179,6 @@ class CommentDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class SubscriptionListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         subscriptions = Subscription.objects.all()
@@ -208,7 +193,6 @@ class SubscriptionListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class SubscriptionDetailView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         subscription = get_object_or_404(Subscription, pk=pk)
@@ -229,7 +213,6 @@ class SubscriptionDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class ViewListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         views = View.objects.all()
@@ -244,7 +227,6 @@ class ViewListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ViewDetailView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         view = get_object_or_404(View, pk=pk)
@@ -265,7 +247,6 @@ class ViewDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class PlaylistListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         playlists = Playlist.objects.all()
@@ -280,7 +261,6 @@ class PlaylistListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class PlaylistDetailView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         playlist = get_object_or_404(Playlist, pk=pk)
@@ -301,7 +281,6 @@ class PlaylistDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class TagListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         tags = Tag.objects.all()
@@ -316,7 +295,6 @@ class TagListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class TagDetailView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         tag = get_object_or_404(Tag, pk=pk)
