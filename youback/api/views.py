@@ -41,10 +41,8 @@ def stream_video(request, video):
     response['Content-Disposition'] = f'inline; filename="{videop.file.name}"'
     return response
 
-#i have to review lower code 
 
 class UserProfileListView(APIView):
-    authentication_classes=[TokenAuthentication]
     def get(self, request):
         profiles = UserProfile.objects.all()
         serializer = UserProfileSerializer(profiles, many=True)
@@ -77,7 +75,6 @@ class UserProfileDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class VideoListView(APIView):
-
     def get(self, request):
         videos = Video.objects.all()
         serializer = VideoSerializer(videos, many=True)
@@ -177,145 +174,38 @@ class CommentDetailView(APIView):
         comment = get_object_or_404(Comment, pk=pk)
         comment.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-class SubscriptionListView(APIView):
-
-    def get(self, request):
-        subscriptions = Subscription.objects.all()
-        serializer = SubscriptionSerializer(subscriptions, many=True)
+    
+class PostListView(APIView):
+    def get(request):
+        post=Post.objects.all()
+        serializer=PostSerializer(post,many=True)
         return Response(serializer.data)
-
     def post(self, request):
-        serializer = SubscriptionSerializer(data=request.data)
+        serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class SubscriptionDetailView(APIView):
-
+class PostDetailView(APIView):
     def get(self, request, pk):
-        subscription = get_object_or_404(Subscription, pk=pk)
-        serializer = SubscriptionSerializer(subscription)
+        post = get_object_or_404(Post, pk=pk)
+        serializer = PostSerializer(post)
         return Response(serializer.data)
 
-    def put(self, request, pk):
-        subscription = get_object_or_404(Subscription, pk=pk)
-        serializer = SubscriptionSerializer(subscription, data=request.data)
+    def put(self, request,pk):
+        post = get_object_or_404(Post, pk=pk)
+        serializer = PostSerializer(post, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
-        subscription = get_object_or_404(Subscription, pk=pk)
-        subscription.delete()
+        post = get_object_or_404(Post, pk=pk)
+        post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-class ViewListView(APIView):
-
-    def get(self, request):
-        views = View.objects.all()
-        serializer = ViewSerializer(views, many=True)
-        return Response(serializer.data)
-
-    def post(self, request):
-        serializer = ViewSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class ViewDetailView(APIView):
-
-    def get(self, request, pk):
-        view = get_object_or_404(View, pk=pk)
-        serializer = ViewSerializer(view)
-        return Response(serializer.data)
-
-    def put(self, request, pk):
-        view = get_object_or_404(View, pk=pk)
-        serializer = ViewSerializer(view, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk):
-        view = get_object_or_404(View, pk=pk)
-        view.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-class PlaylistListView(APIView):
-
-    def get(self, request):
-        playlists = Playlist.objects.all()
-        serializer = PlaylistSerializer(playlists, many=True)
-        return Response(serializer.data)
-
-    def post(self, request):
-        serializer = PlaylistSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class PlaylistDetailView(APIView):
-
-    def get(self, request, pk):
-        playlist = get_object_or_404(Playlist, pk=pk)
-        serializer = PlaylistSerializer(playlist)
-        return Response(serializer.data)
-
-    def put(self, request, pk):
-        playlist = get_object_or_404(Playlist, pk=pk)
-        serializer = PlaylistSerializer(playlist, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk):
-        playlist = get_object_or_404(Playlist, pk=pk)
-        playlist.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-class TagListView(APIView):
-
-    def get(self, request):
-        tags = Tag.objects.all()
-        serializer = TagSerializer(tags, many=True)
-        return Response(serializer.data)
-
-    def post(self, request):
-        serializer = TagSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class TagDetailView(APIView):
-
-    def get(self, request, pk):
-        tag = get_object_or_404(Tag, pk=pk)
-        serializer = TagSerializer(tag)
-        return Response(serializer.data)
-
-    def put(self, request, pk):
-        tag = get_object_or_404(Tag, pk=pk)
-        serializer = TagSerializer(tag, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk):
-        tag = get_object_or_404(Tag, pk=pk)
-        tag.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-#chat and i have to just review
+#chat and i have to review
 class MessageListView(APIView):
     def get(self, request):
         messages = Message.objects.all()

@@ -2,9 +2,10 @@ from django.urls import path
 from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
+
 urlpatterns= [
     #to create user and assign token
-    path('',Api.as_view(),name='index'),
+    path('api/',Api.as_view(),name='index'),
 
     #to create youtube and its feature
     # UserProfile views
@@ -23,26 +24,14 @@ urlpatterns= [
     path('comments/', CommentListView.as_view(), name='comment-list'),
     path('comments/<int:pk>/', CommentDetailView.as_view(), name='comment-detail'),
 
-    # Subscription views
-    path('subscriptions/', SubscriptionListView.as_view(), name='subscription-list'),
-    path('subscriptions/<int:pk>/', SubscriptionDetailView.as_view(), name='subscription-detail'),
-
-    # View views
-    path('views/', ViewListView.as_view(), name='view-list'),
-    path('views/<int:pk>/', ViewDetailView.as_view(), name='view-detail'),
-
-    # Playlist views
-    path('playlists/', PlaylistListView.as_view(), name='playlist-list'),
-    path('playlists/<int:pk>/', PlaylistDetailView.as_view(), name='playlist-detail'),
-
-    # Tag views
-    path('tags/', TagListView.as_view(), name='tag-list'),
-    path('tags/<int:pk>/', TagDetailView.as_view(), name='tag-detail'),
-
+    #post views
+    path('post/',PostListView.as_view(),name='post-list'),
+    path('post/<int:pk>/',PostDetailView.as_view(),name='post-detail'),
 
 
     #steaming path
     path('api/video/<int:video>/',stream_video, name='playback'),
+
     
     #Here chatting app links
     

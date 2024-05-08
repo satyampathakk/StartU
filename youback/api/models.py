@@ -33,32 +33,10 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.user.username}'s comment on {self.video.title}"
 
-class Subscription(models.Model):
-    subscriber = models.ForeignKey(User, related_name='subscriptions', on_delete=models.CASCADE)
-    channel = models.ForeignKey(User, related_name='subscribers', on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
 
-class View(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    video = models.ForeignKey(Video, on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
-
-class Playlist(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    videos = models.ManyToManyField(Video)
-
-    def __str__(self):
-        return self.title
-
-class Tag(models.Model):
-    name = models.CharField(max_length=50)
-    videos = models.ManyToManyField(Video)
-
-    def __str__(self):
-        return self.name
-
-
+class Post(models.Model):
+    img=models.ImageField(upload_to='media/posts/', blank=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
 #Below has models for chatting 
     
 

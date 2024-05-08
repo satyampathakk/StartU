@@ -10,7 +10,10 @@ class VideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Video
         fields = '__all__'
-
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Post
+        fields='__all__'
 class LikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Like
@@ -21,25 +24,6 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = '__all__'
 
-class SubscriptionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Subscription
-        fields = '__all__'
-
-class ViewSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = View
-        fields = '__all__'
-
-class PlaylistSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Playlist
-        fields = '__all__'
-
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = '__all__'
 
 
 #  Below have chat application serializers
