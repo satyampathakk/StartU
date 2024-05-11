@@ -10,6 +10,10 @@ class VideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Video
         fields = '__all__'
+class VideoSerial(serializers.ModelSerializer):
+    class Meta:
+        model = Video
+        fields = ['pk','thumbnail','title','user','upload_time','description']
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model=Post

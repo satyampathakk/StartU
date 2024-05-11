@@ -1,10 +1,10 @@
 import SingleVideoPlayer from '../SingleVideoPlayer'
 import Videos from '../Videos';
-const PlayerLayout=()=>{
+const PlayerLayout=({pk})=>{
     return(
     <div>
         <h1>Player Layout</h1>
-        <SingleVideoPlayer></SingleVideoPlayer>
+        <SingleVideoPlayer videoId={pk}></SingleVideoPlayer>
         <Videos></Videos>
     </div>)
 }

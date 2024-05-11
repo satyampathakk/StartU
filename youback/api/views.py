@@ -77,7 +77,7 @@ class UserProfileDetailView(APIView):
 class VideoListView(APIView):
     def get(self, request):
         videos = Video.objects.all()
-        serializer = VideoSerializer(videos, many=True)
+        serializer = VideoSerial(videos, many=True)
         return Response(serializer.data)
 
     def post(self, request):
