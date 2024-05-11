@@ -1,0 +1,174 @@
+[33mcommit eb4c82046aa0e611101a577adda5b69c5133ccea[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Sat May 11 21:21:42 2024 +0530
+
+    some features are working
+
+[33mcommit b67ecdb0fc83ed6ab40f8156b8fb2a2ff1249d87[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Wed May 8 21:41:00 2024 +0530
+
+    see the apis are working till the post
+
+[33mcommit 547561ff956a337f4ad56f85dc8bbe948b283fa4[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Sun Jan 7 19:30:02 2024 +0530
+
+    backend is working and u can make get request i have added one video and thumbnail
+
+[33mcommit 430ca18587e149eda0725cfb2f9c3d7598277af9[m
+Author: autkarsh989 <autkarsh989@gmail.com>
+Date:   Fri Jan 5 14:37:34 2024 +0530
+
+    added navbar classname
+
+[33mcommit 0caac5acd4f97c1e4bcb122c6693c400c578c0b7[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Wed Jan 3 13:56:28 2024 +0530
+
+    add classname and tailwind css will be applied
+
+[33mcommit 341ed6a3402dac0dee42bb5277497fae7b155eac[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Wed Jan 3 13:16:20 2024 +0530
+
+    added tailwind css
+
+[33mcommit 0dd7f1cf69999c099a20a319120291d7b96b0a87[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Tue Dec 26 20:13:33 2023 +0530
+
+    updated and added onclick to the cards and also added key slice use useselector to get key value
+
+[33mcommit f123a145fe037fc4b68121b39505ab7a5935d098[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Mon Dec 25 14:38:54 2023 +0530
+
+    1.0.2S
+
+[33mcommit 3f4e4c9253e981f51b32ec51aa460bd14e4b7934[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Mon Dec 25 13:03:11 2023 +0530
+
+    1.0.1S
+
+[33mcommit 0c84b4fced307efe830beb41943a4bc89d30760e[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Mon Dec 25 12:57:09 2023 +0530
+
+    1.0.0S
+
+[33mcommit 8ea87f076ed501ea9ebbaa662e86b44f10457c35[m
+Merge: e223b6a 200d5bd
+Author: autkarsh989 <autkarsh989@gmail.com>
+Date:   Sun Dec 24 14:11:09 2023 +0530
+
+    Merge branch 'master' of https://github.com/satyampathakk/StartU
+
+[33mcommit e223b6a277cc5871d57ac905c00acac9b18e7d52[m
+Author: autkarsh989 <autkarsh989@gmail.com>
+Date:   Sun Dec 24 14:11:02 2023 +0530
+
+    1.0.2U
+    
+    Added video card component for videos section.
+
+[33mcommit 200d5bd1b06a116b5bc5b60725bc39a68dabf831[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Sun Dec 24 12:58:40 2023 +0530
+
+    1.0.0S
+
+[33mcommit c7c795da0a5ed634ed8f928dcdabbabe2aacd510[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Sun Dec 24 12:50:34 2023 +0530
+
+    1.0.0S
+
+[33mcommit 054ef0b37f1ebda98d7fc658256a67a5e019bfb1[m
+Author: autkarsh989 <autkarsh989@gmail.com>
+Date:   Sun Dec 24 12:26:42 2023 +0530
+
+    1.0.1U
+    
+    1.0.0U
+
+[33mcommit 6909c2eaa018a902d2694335a8ce40925d590a87[m
+Merge: 504b782 87e3473
+Author: satyam <satyampathak67@gmail.com>
+Date:   Sat Dec 23 20:35:29 2023 +0530
+
+    Merge branch 'master' of https://github.com/satyampathakk/StartU
+
+[33mcommit 504b7824abb8a22911e06692dd873c62b8a53ec3[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Sat Dec 23 20:34:48 2023 +0530
+
+    1.0.0
+
+[33mcommit 87e3473bb0f1d85ed0c72d593a03d9dde4b1aac1[m
+Author: satyam <satyampathakk3@gmail.com>
+Date:   Sat Dec 23 16:48:35 2023 +0530
+
+    1.0.0
+
+[33mcommit b4b52910dcba8d6b5abd0a21a06ce7ab7b7953e0[m
+Author: satyam <satyampathakk3@gmail.com>
+Date:   Sat Dec 23 15:57:07 2023 +0530
+
+    kya hogya
+
+[33mcommit 1d08c266f1ee0fc6b9f337c4b5812e4c1a915f4e[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Fri Dec 22 22:25:58 2023 +0530
+
+    1.0.0 s
+
+[33mcommit 3b628172e34f74c1fbe7a4a678c29777739b38c6[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Fri Dec 22 21:45:00 2023 +0530
+
+    1.0.0
+
+[33mcommit 0438ad7161ef7300592643c078959bc48082818f[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Fri Dec 22 20:33:03 2023 +0530
+
+    1.0.0
+
+[33mcommit dd503fd17579bc1d6b4c980e3f5b62721a17527e[m
+Merge: d682960 d6d4f9f
+Author: satyam <satyampathak67@gmail.com>
+Date:   Fri Dec 22 20:28:44 2023 +0530
+
+    Merge branch 'master' of https://github.com/satyampathakk/StartU
+
+[33mcommit d6829606af63aed99302563fb65930920ae7c049[m
+Author: satyam <satyampathak67@gmail.com>
+Date:   Fri Dec 22 20:28:00 2023 +0530
+
+    1.0.1
+
+[33mcommit d6d4f9ff428aafcaef28bc07dff1fd8e89fcb5c1[m
+Author: hello <hello@gmail.com>
+Date:   Fri Dec 22 15:02:00 2023 +0530
+
+    1.0.0
+
+[33mcommit 0ade61b4d16330ee6ae2d6cf08da59e514b51023[m
+Author: hello <hello@gmail.com>
+Date:   Fri Dec 22 15:01:22 2023 +0530
+
+    1.0.0
+
+[33mcommit b5e36d9ab5074c337db29fd47592bd05e7aeb0ee[m
+Author: satyam pathak <satyampathak67@gmail.com>
+Date:   Fri Dec 22 14:39:09 2023 +0530
+
+    1.0.0
+
+[33mcommit fe97316f3fb6327838d3417818f2a8cec1058639[m
+Author: satyam pathak <satyampathak67@gmail.com>
+Date:   Fri Dec 22 14:36:50 2023 +0530
+
+    1.0.0
